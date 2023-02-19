@@ -1,0 +1,138 @@
+.home{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
+.banner{
+  height: 20vh;
+  background: url('./images/pizza.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.sideCart{
+  display: none;
+}
+.left{
+  grid-column: 1 / span 3;
+}
+
+.categories{
+  display: flex;
+  overflow-x:auto ;
+  /* display: grid;
+  grid-column: 1 / span 2;
+  grid-auto-flow: column;
+  grid-auto-columns: 30%;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+  gap: 1rem;
+  background-color: #f8f5f2; */
+}
+
+.cateory-details > :last-child{
+  margin-bottom: 1rem;
+}
+
+.crd{
+  position: relative;
+  padding: 1rem;
+  background-color: white;
+}
+
+.crd-overlay{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.crd:hover .imge {
+  transform: scale(1.05);
+}
+.overlay-text{
+  width: 100%;
+  word-wrap: break-word;
+}
+
+/* =================================END OF CATEGORY SECTION===================================== */
+
+.cateory-details{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(auto,auto));
+  gap: 1rem;
+}
+
+.categImg{
+  width: 100%;
+  height: 150px;
+  background: url('./images/Burger.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* .crd{
+  background-size: contain;
+  padding: 0;
+} */
+
+
+.categ-header-text{
+  padding: 1rem .7rem;
+  background-color: #676874;
+}
+.crd-product{
+  position: relative;
+  /* background-color: rgb(88, 88, 88); */
+}
+.add{
+  cursor: pointer;
+}
+
+.add::before{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #ebebeb;
+    border-left: 1px solid #ebebeb;
+    border-radius: 0 2px 0 0;
+    color: #125fca;
+    font-size: 24px;
+    text-align: center;
+    content: "+";
+}
+.crd-product:hover{
+  background-color: rgba(175, 232, 240, 0.3);
+}
+/* ===================================MODAL======================= */
+
+/* ===========================================SIDE CART */
+.order{
+  padding: .7rem .5rem;
+  border-radius: 15px;
+}
+.btnSub,
+.btnAdd{
+  width: 30px;
+  border-radius: 50%;
+  padding: .2rem;
+  text-align: center;
+  opacity: .2;
+  cursor: pointer;
+}
+.inner-extras{
+  height:300px ;
+}
+
+/* =====================================MEDIA=========================================== */
+@media only screen and (min-width: 600px) {
+  .left{
+    grid-column: 1 / span 2;
+  }
+  .sideCart{
+    display: block;
+    grid-column: 3;
+  }
+}
